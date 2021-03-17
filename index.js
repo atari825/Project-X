@@ -145,6 +145,14 @@ window.addEventListener("load", function (event) {
       option.text = eachWeapon.name;
       select.add(option);
     });
+    //is select the right element to add the event listner to?
+    select.addEventListener("change", function (event) {
+      let selectedFrameIndex = document.getElementById('heroFrame').selectedIndex;
+      console.log(event); // can we get selctedframe from the event?
+      let selectedFrame  = frameArray[selectedFrameIndex];
+     document.getElementById('att').value = selectedFrame.att ;
+     document.getElementById('def').value = selectedFrame.def ;
+    });
   }
   let frameSelect = document.getElementsByClassName("frames");
   console.log("frames");
@@ -157,12 +165,8 @@ window.addEventListener("load", function (event) {
     });
   }
 
-  //   // let variableName = document.getElementById('idOfSomething').value;
-  //   let s = document.getElementById('selectWeapon').value;
-
-  //   let finalValue = ???
-  // // document.getElementById('idOfOutput').value = finalValue;
-  // document.getElementById('selectWeapon').value = finalValue;
+  
+  // document.getElementById('selectWeapon').value = ;
 
 
 }); //this needs to be at the end
